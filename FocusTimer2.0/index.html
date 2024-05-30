@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cronômetro estlio Pomodoro" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <title>Focus Timer</title>
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script type="module" src="/main.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <div id="app">
+        <div id="timer">
+          <section id="time">
+            <span id="minutes">00</span>
+            <span>:</span>
+            <span id="seconds">00</span>
+          </section>
+          <section id="controls">
+            <button data-action="toggleRunning" id="controlsPlay" class="ph ph-play-circle controlsMenu">
+              <span class="sr-only">Iniciar contador</span>
+            </button>
+            <button data-action="toggleRunning" id="controlsPause" class="ph ph-pause-circle controlsMenu">
+              <span class="sr-only">Pausar contador</span>
+            </button>
+            <button data-action="stopRunning" id="controlsStop" class="ph ph-stop-circle controlsMenu">
+              <span class="sr-only">Reiniciar contador</span>
+            </button>
+            <button data-action="plus" id="controlsPlus" class="ph ph-plus-circle controlsMenu">
+              <span class="sr-only">Mais cinco minutos</span>
+            </button>
+            <button data-action="minus" id="controlsMinus" class="ph ph-minus-circle controlsMenu">
+              <span class="sr-only">Menos cinco minutos</span>
+            </button>
+          </section>
+        </div>
+        <section id="ambience">
+          <button data-action="toggleFloresta" id="floresta" class="ph ph-tree-evergreen ambienceMenu">
+            <span class="sr-only">Floresta</span>
+          </button>
+          <button data-action="toggleChuva" id="chuva" class="ph ph-cloud-rain ambienceMenu">
+            <span class="sr-only">Chuva</span>
+          </button>
+          <button data-action="toggleCafeteria" id="cafeteria" class="ph ph-coffee ambienceMenu">
+            <span class="sr-only">Cafeteria</span>
+          </button>
+          <button data-action="toggleLareira" id="lareira" class="ph ph-fire-simple ambienceMenu">
+            <span class="sr-only">Lareira</span>
+          </button>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --bg-color: rgb(235, 232, 232);
+  --text-color: rgb(90, 85, 85);
+  --text-color-secondary: white;
+  --button-color: rgb(162, 150, 127);
+  --button-color-hover: rgb(134, 124, 105);
+  --button-color-secondary: rgb(244, 175, 47);
+  --button-color-secondary-hover: rgb(245, 192, 94);
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--bg-color);
+
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+div#app {
+  display: flex;
+  column-gap: 19.2rem;
+}
+
+section#time {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  color: var(--text-color);
+
+  font-size: 14rem;
+  display: flex;
+  justify-content: center;
+}
+
+div#timer {
+  display: grid;
+  max-height: 23.8rem;
+  place-content: center;
+
+  padding: 50% 0;
+}
+
+section#controls {
+  display: flex;
+  justify-content: space-between;
+
+  max-width: 348px;
+  max-height: 64px;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  color: var(--button-color);
+
+  cursor: pointer;
+  font-size: 6.4rem;
+}
+
+section#controls button {
+  width: 6.4rem;
+  height: 6.4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: (40%, 1% + 2vw, 62.5%);
+}
+
+section#controls button:hover {
+  color: var(--button-color-secondary-hover);
+}
+
+@keyframes blink {
+  0% {
+    font-size: 6.4rem;
+  }
+  50% {
+    font-size: 7.2rem;
+  }
+  100% {
+    font-size: 6.4rem;
+  }
+}
+
+.blink {
+  animation: blink 0.3s ease-in-out;
+}
+
+section#ambience {
+  display: grid;
+  height: 100vh;
+  place-content: center;
+
+  grid-template-columns: 16rem 16rem;
+  grid-template-rows: 16rem 16rem;
+
+  gap: 3.2rem;
+}
+
+section#ambience button {
+  background-color: var(--button-color);
+  border: 0;
+  color: var(--text-color-secondary);
+
+  cursor: pointer;
+  font-size: 6.4rem;
+
+  border-radius: 2rem;
+}
+
+section#ambience button:hover {
+  background-color: var(--button-color-hover);
+}
+
+section#ambience button.musicOn:hover {
+  background-color: var(--button-color-secondary-hover);
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+
+  margin: -1px;
+  padding: 0px;
+  border: 0;
+  appearance: none;
+}
+
+html:not(.running) .ph-pause-circle {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.running .ph-play-circle {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+button#floresta.musicOn,
+button#chuva.musicOn,
+button#cafeteria.musicOn,
+button#lareira.musicOn {
+  background-color: var(--button-color-secondary);
+}
